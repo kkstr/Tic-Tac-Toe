@@ -74,7 +74,8 @@ def print_board(board):
     print(board[6] + " | " + board[7] + " | " + board[8])
 
 
-main()
+if __name__ == "__main__":
+    main()
 
 
 #!/usr/bin/env python3
