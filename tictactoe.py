@@ -8,7 +8,7 @@ def main():
     counter = 0
     while game_on:
         if turn == "X":
-            move = input(int("\nX's turn: " - 1))
+            move = input("\nX's turn: ")
             if move == "q":
                 break
             elif move == "r":
@@ -21,17 +21,18 @@ def main():
             else:
                 try:
                     move = int(move)
-                    if move < 0 or move > 8:
+                    move_final = move - 1
+                    if move_final < 0 or move_final  > 8:
                         print("That is an invalid move. Try again.")
-                    elif board[move] != "-":
+                    elif board[move_final] != "-":
                         print("That space is already taken. Try again.")
                     else:
-                        board[move] = "X"
+                        board[move_final] = "X"
                         counter += 1
                 except ValueError:
                     print("That is an invalid move. Try again.")
         else:
-            move = input(int("\nO's turn: " - 1))
+            move = input("\nO's turn: ")
             if move == "q":
                 break
             elif move == "r":
@@ -44,12 +45,13 @@ def main():
             else:
                 try:
                     move = int(move)
-                    if move < 0 or move > 8:
+                    move_final = move - 1
+                    if move_final < 0 or move_final > 8:
                         print("That is an invalid move. Try again.")
-                    elif board[move] != "-":
+                    elif board[move_final] != "-":
                         print("That space is already taken. Try again.")
                     else:
-                        board[move] = "O"
+                        board[move_final] = "O"
                         counter += 1
                 except ValueError:
                     print("That is an invalid move. Try again.")
