@@ -8,7 +8,7 @@ def main():
     counter = 0
     while game_on:
         if turn == "X":
-            move = input("\nX's turn: ")
+            move = input(int("\nX's turn: " - 1))
             if move == "q":
                 break
             elif move == "r":
@@ -31,7 +31,7 @@ def main():
                 except ValueError:
                     print("That is an invalid move. Try again.")
         else:
-            move = input("\nO's turn: ")
+            move = input(int("\nO's turn: " - 1))
             if move == "q":
                 break
             elif move == "r":
